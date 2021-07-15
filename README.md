@@ -5,6 +5,7 @@ These libraries are assumed to be used in competitive programming, so errors are
 | Categories | Examples |
 |---|---|
 | [Data Structure](#ds) | Set, Queue, Stack, UnionFind, Segment Tree |
+| [Dynamic Programming](#dp) | Knapsack, Bit, Digit |
 | [Sorting](#sort) | Insertion, Merge, Heap, Quick, Base |
 | [Standard Library](#stl) | Lower Bound, Count, Find, Next Permutation |
 
@@ -24,6 +25,13 @@ Standard Library in C++.
 * Queue
 * Stack
 * PriorityQueue (only example)
+
+<a name="dp"></a>
+## Dynamic Programming
+
+* Knapsack
+* Bit
+* Digit
 
 <a name="ds"></a>
 ## Data Structure
