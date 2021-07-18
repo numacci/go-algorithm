@@ -1,5 +1,5 @@
 package stl
 
-func lcm(a, b int) int {
-	return a / gcd(a, b) * b
+func Lcm(a, b int) int {
+	return a / Gcd(a, b) * b
 }

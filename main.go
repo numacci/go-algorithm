@@ -53,8 +53,14 @@ func nextInts(n int) []int {
 	return ret
 }
 
+func nextStrings(n int) []string {
+	ret := make([]string, n)
+	for i := 0; i < n; i++ {
+		ret[i] = next()
+	}
+	return ret
+}
+
 func out(x ...interface{}) {
 	fmt.Fprintln(w, x...)
 }
-
-// Standard Libraries

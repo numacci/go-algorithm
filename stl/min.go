@@ -1,13 +1,13 @@
 package stl
 
-func min(a, b int) int {
+func Min(a, b int) int {
 	if a < b {
 		return a
 	}
 	return b
 }
 
-func mins(x ...int) int {
+func Mins(x ...int) int {
 	if len(x) <= 0 {
 		return 0
 	}
@@ -20,7 +20,7 @@ func mins(x ...int) int {
 	return ret
 }
 
-func chmin(a *int, b int) bool {
+func Chmin(a *int, b int) bool {
 	if *a > b {
 		*a = b
 		return true

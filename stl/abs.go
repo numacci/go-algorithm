@@ -1,6 +1,6 @@
 package stl
 
-func abs(x int) int {
+func Abs(x int) int {
 	if x < 0 {
 		x *= -1
 	}

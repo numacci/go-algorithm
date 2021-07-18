@@ -4,10 +4,10 @@ import "fmt"
 
 func ExampleAbs() {
 	x := 100
-	fmt.Println(abs(x))
+	fmt.Println(Abs(x))
 
 	y := -99
-	fmt.Println(abs(y))
+	fmt.Println(Abs(y))
 
 	// Output:
 	// 100

@@ -1,13 +1,13 @@
 package stl
 
-func max(a, b int) int {
+func Max(a, b int) int {
 	if a > b {
 		return a
 	}
 	return b
 }
 
-func maxs(x ...int) int {
+func Maxs(x ...int) int {
 	if len(x) <= 0 {
 		return 0
 	}
@@ -20,7 +20,7 @@ func maxs(x ...int) int {
 	return ret
 }
 
-func chmax(a *int, b int) bool {
+func Chmax(a *int, b int) bool {
 	if *a < b {
 		*a = b
 		return true
