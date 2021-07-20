@@ -62,4 +62,3 @@ Standard Library in C++.
 ## Additional Information
 
 * Some algorithms and data structures are explained in [zenn.dev/numacci](https://zenn.dev/numacci)
-* The package structure is referred to [drken1215/algorithm](https://github.com/drken1215/algorithm)
