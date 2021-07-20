@@ -6,6 +6,7 @@ These libraries are assumed to be used in competitive programming, so errors are
 |---|---|
 | [Data Structure](#ds) | Set, Queue, Stack, UnionFind, Segment Tree |
 | [Dynamic Programming](#dp) | Knapsack, Bit, Digit |
+| [Graph](#graph) | Dijkstra, Floyd Warshall, MST |
 | [Sorting](#sort) | Insertion, Merge, Heap, Quick, Base |
 | [Standard Library](#stl) | Lower Bound, Count, Find, Next Permutation |
 
@@ -39,6 +40,14 @@ Standard Library in C++.
 * UnionFind
 * Segment Tree
 * Binary Indexed Tree
+
+<a name="graph"></a>
+## Graph
+
+* Dijkstra
+* Floyd Warshall
+* MST - Prim
+* MST - Kruskal
 
 <a name="sort"></a>
 ## Sorting
