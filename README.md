@@ -4,7 +4,7 @@ These libraries are assumed to be used in competitive programming, so errors are
 
 | Categories | Examples |
 |---|---|
-| [Standard Library](#stl) | Max/Min, Lower Bound, Next Permutation, Data Structure Examples |
+| [Standard Library](#stl) | Max/Min, Binary Search, Next Permutation, Standard Data Structure Examples |
 | [Data Structure](#ds) | Set, Queue, Stack, UnionFind, Segment Tree, Binary Indexed Tree |
 | [Dynamic Programming](#dp) | Knapsack, Bit, Digit |
 | [Graph](#graph) | Dijkstra, Floyd Warshall, Minimum Spanning Tree |
@@ -21,11 +21,11 @@ Standard Libraries in C++.
 * LCM
 * Max
 * Min
+* Binary Search
+* Next Permutation
+* Pop Count (Only Example)
 * Reverse (Only Example)
 * Sort (Only Example)
-* Lower Bound
-* Next Permutation
-* Pop Count
  
 ### STL Data Structure
 We can simply create the following data structures
@@ -37,7 +37,7 @@ please refer to [Data Structure](#ds) directory.
 * Set (Only Example)
 * Queue (Only Example)
 * Stack (Only Example)
-* IntHeap
+* Priority Queue (Int Heap)
 
 <a name="dp"></a>
 ## Dynamic Programming
