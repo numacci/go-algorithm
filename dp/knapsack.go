@@ -1,6 +1,8 @@
 package dp
 
-import . "github.com/numacci/go-algorithm/stl"
+import (
+	"github.com/numacci/go-algorithm/stl/function"
+)
 
 // KnapsackDP は，以下のような問題を解くときに利用される動的計画法である．
 //   重さと価値が定義されたN個の品物の中から重さの総和がWを超えないように
@@ -23,7 +25,7 @@ func KnapsackDP(n, W int, w, v []int) int {
 				dp[i+1][j] = dp[i][j]
 			} else {
 				// i番目の品物を選べる→選ばない場合と選んだ場合の価値の総和の最大
-				dp[i+1][j] = Max(dp[i][j], dp[i][j-w[i]]+v[i])
+				dp[i+1][j] = function.Max(dp[i][j], dp[i][j-w[i]]+v[i])
 			}
 		}
 	}

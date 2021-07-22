@@ -1,4 +1,4 @@
-package stl
+package function
 
 func Max(a, b int) int {
 	if a > b {

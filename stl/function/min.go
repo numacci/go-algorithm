@@ -1,4 +1,4 @@
-package stl
+package function
 
 func Min(a, b int) int {
 	if a < b {

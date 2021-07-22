@@ -1,4 +1,4 @@
-package stl
+package mathematics
 
 const (
 	BCMax = 510000

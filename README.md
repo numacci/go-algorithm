@@ -4,28 +4,40 @@ These libraries are assumed to be used in competitive programming, so errors are
 
 | Categories | Examples |
 |---|---|
-| [Data Structure](#ds) | Set, Queue, Stack, UnionFind, Segment Tree |
+| [Standard Library](#stl) | Max/Min, Lower Bound, Next Permutation, Data Structure Examples |
+| [Data Structure](#ds) | Set, Queue, Stack, UnionFind, Segment Tree, Binary Indexed Tree |
 | [Dynamic Programming](#dp) | Knapsack, Bit, Digit |
-| [Graph](#graph) | Dijkstra, Floyd Warshall, MST |
+| [Graph](#graph) | Dijkstra, Floyd Warshall, Minimum Spanning Tree |
+| [Mathematics](#math) | Binomial Coefficient, Eratosthenes |
 | [Sorting](#sort) | Insertion, Merge, Heap, Quick, Base |
-| [Standard Library](#stl) | Lower Bound, Count, Find, Next Permutation |
 
 <a name="stl"></a>
 ## Standard Library
-Standard Library in C++.
+Standard Libraries in C++.
 
 ### STL Function
-* Count
-* Find
+* Abs
+* GCD
+* LCM
+* Max
+* Min
+* Reverse (Only Example)
+* Sort (Only Example)
 * Lower Bound
 * Next Permutation
 * Pop Count
-  
+ 
 ### STL Data Structure
-* Set (only example)
-* Queue
-* Stack
-* PriorityQueue (only example)
+We can simply create the following data structures
+by built-in structs such as map and slice.
+
+If you want to implement set, queue and stack yourself,
+please refer to [Data Structure](#ds) directory.
+
+* Set (Only Example)
+* Queue (Only Example)
+* Stack (Only Example)
+* IntHeap
 
 <a name="dp"></a>
 ## Dynamic Programming
@@ -37,6 +49,10 @@ Standard Library in C++.
 <a name="ds"></a>
 ## Data Structure
 
+* Set
+* Queue
+* Stack
+* Priority Queue
 * UnionFind
 * Segment Tree
 * Binary Indexed Tree
@@ -46,8 +62,13 @@ Standard Library in C++.
 
 * Dijkstra
 * Floyd Warshall
-* MST - Prim
-* MST - Kruskal
+* Minimum Spanning Tree - Prim
+* Minimum Spanning Tree - Kruskal
+
+<a name="math"></a>
+## Mathematics
+
+* Binomial Coefficient
 
 <a name="sort"></a>
 ## Sorting

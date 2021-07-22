@@ -1,4 +1,4 @@
-package stl
+package function
 
 func Abs(x int) int {
 	if x < 0 {

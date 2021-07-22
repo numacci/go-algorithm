@@ -1,4 +1,4 @@
-package stl
+package function
 
 func Gcd(a, b int) int {
 	for b != 0 {

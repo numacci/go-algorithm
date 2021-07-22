@@ -1,8 +1,9 @@
-package stl
+package datastruct
 
 import "fmt"
 
 func ExampleStack() {
+	// we can use slice instead of stack
 	s := make([]int, 0)
 
 	// Push
