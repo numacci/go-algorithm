@@ -8,7 +8,7 @@ These libraries are assumed to be used in competitive programming, so errors are
 | [Data Structure](#ds) | Set, Queue, Stack, UnionFind, Segment Tree, Binary Indexed Tree |
 | [Dynamic Programming](#dp) | Knapsack, Bit, Digit |
 | [Graph](#graph) | Dijkstra, Floyd Warshall, Minimum Spanning Tree |
-| [Mathematics](#math) | Binomial Coefficient, Eratosthenes |
+| [Mathematics](#math) | Binomial Coefficient, Prime Numbers, Eratosthenes |
 | [Sorting](#sort) | Insertion, Merge, Heap, Quick, Base |
 
 <a name="stl"></a>
@@ -68,7 +68,15 @@ please refer to [Data Structure](#ds) directory.
 <a name="math"></a>
 ## Mathematics
 
+### Combinatorics
 * Binomial Coefficient
+
+### Number Theory
+* Modulo Power
+* Divisor
+* Primality Test
+* Integer Factorization
+* Sieve of Eratosthenes
 
 <a name="sort"></a>
 ## Sorting
@@ -82,4 +90,4 @@ please refer to [Data Structure](#ds) directory.
 
 ## Additional Information
 
-* Some algorithms and data structures are explained in [zenn.dev/numacci](https://zenn.dev/numacci)
+* Some algorithms and data structures are explained at [zenn.dev/numacci](https://zenn.dev/numacci)
