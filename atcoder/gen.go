@@ -12,8 +12,8 @@ import (
 
 const (
 	STLDir   = "stl/function/"
-	OutFile  = "main.go"
-	Template = "templates/template.go"
+	OutFile  = "atcoder/main.go"
+	Template = "atcoder/templates/template.go"
 
 	FuncFileSuffix = ".go"
 	TestFileSuffix = "_test.go"
