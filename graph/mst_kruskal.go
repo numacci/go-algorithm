@@ -1,7 +1,7 @@
 package graph
 
 import (
-	. "github.com/numacci/go-antbook/utils/datastruct"
+	. "github.com/numacci/go-algorithm/datastruct"
 	"sort"
 )
 

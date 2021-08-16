@@ -8,38 +8,38 @@ import (
 func ExamplePriorityQueue() {
 	items := []*Item{
 		{
-			v: "banana",
-			p: 3,
+			V: "banana",
+			P: 3,
 		},
 		{
-			v: "apple",
-			p: 2,
+			V: "apple",
+			P: 2,
 		},
 		{
-			v: "pear",
-			p: 4,
+			V: "pear",
+			P: 4,
 		},
 	}
 
 	// initialize the priority queue
 	pq := make(PriorityQueue, 0, len(items))
 	for i, item := range items {
-		item.index = i
-		pq = append(pq, item)
+		item.Idx = i
+		pq = append(pq, &Item{V: item.V, P: -item.P}) // desc
 	}
 	heap.Init(&pq)
 
 	top := heap.Pop(&pq).(*Item)
-	fmt.Println(top.v)
+	fmt.Println(top.V)
 
 	heap.Push(&pq, &Item{
-		v: "orange",
-		p: 5,
+		V: "orange",
+		P: -5,
 	})
 
 	for pq.Len() > 0 {
 		top = heap.Pop(&pq).(*Item)
-		fmt.Println(top.v)
+		fmt.Println(top.V)
 	}
 
 	// Output:

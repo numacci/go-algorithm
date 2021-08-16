@@ -6,13 +6,15 @@ import (
 	"io"
 	"io/fs"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
 )
 
 const (
 	STLDir   = "stl/function/"
-	OutFile  = "atcoder/main.go"
+	MainFile = "main.go"
+	OutFile  = "atcoder/" + MainFile
 	Template = "atcoder/templates/template.go"
 
 	FuncFileSuffix = ".go"
@@ -33,21 +35,26 @@ func main() {
 
 	fmt.Printf("initialize output file: %s\n", OutFile)
 	if err := initialize(); err != nil {
-		fmt.Printf("error occured when initializing: %v\n", err)
+		fmt.Printf("error occured when initializing: %+v\n", err)
 		os.Exit(1)
 	}
 
 	fmt.Printf("collect functions from %s\n", STLDir)
 	functions, err := collectFunctions()
 	if err != nil {
-		fmt.Printf("error occured when collecting functions: %v\n", err)
+		fmt.Printf("error occured when collecting functions: %+v\n", err)
 		os.Exit(1)
 	}
 
 	fmt.Printf("write functions to %s\n", OutFile)
-	err = writeFunctions(functions)
-	if err != nil {
-		fmt.Printf("error occured when writing functions: %v\n", err)
+	if err = writeFunctions(functions); err != nil {
+		fmt.Printf("error occured when writing functions: %+v\n", err)
+		os.Exit(1)
+	}
+
+	fmt.Println("copy generated file to atcoder-cli template directory")
+	if err = copyToAtcoderCliDir(); err != nil {
+		fmt.Printf("error occured when copying to atcoder-cli directory: %+v", err)
 		os.Exit(1)
 	}
 
@@ -172,6 +179,36 @@ func writeFunctions(functions []Function) error {
 				return err
 			}
 		}
+	}
+	return nil
+}
+
+func copyToAtcoderCliDir() error {
+	out, err := exec.Command("acc", "config-dir").Output()
+	if err != nil {
+		return err
+	}
+	accTemplateFile := fmt.Sprintf("%s/go/%s", strings.TrimRight(string(out), "\n"), MainFile)
+
+	if err = os.Remove(accTemplateFile); err != nil {
+		return err
+	}
+
+	src, err := os.Open(OutFile)
+	if err != nil {
+		return err
+	}
+	defer src.Close()
+
+	dst, err := os.Create(accTemplateFile)
+	if err != nil {
+		return err
+	}
+	defer dst.Close()
+
+	_, err = io.Copy(dst, src)
+	if err != nil {
+		return err
 	}
 	return nil
 }
