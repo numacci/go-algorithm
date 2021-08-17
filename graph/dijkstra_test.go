@@ -14,20 +14,12 @@ func ExampleDijkstra() {
 		{1, 3, 5},
 	}
 
-	G := make([][]*Edge, V)
-	for i := 0; i < V; i++ {
-		G[i] = make([]*Edge, 0)
-	}
-
+	d := NewDijkstra(V)
 	for _, arg := range args {
-		G[arg.from] = append(G[arg.from], &Edge{To: arg.to, Cost: arg.cost})
+		d.AddEdge(arg.from, arg.to, arg.cost)
 	}
 
-	dist := make([]int, V)
-	for i := 0; i < V; i++ {
-		dist[i] = 1 << 60
-	}
-	Dijkstra(G, dist, r)
+	dist := d.Do(r)
 
 	for _, v := range dist {
 		fmt.Println(v)

@@ -5,30 +5,58 @@ import (
 	. "github.com/numacci/go-algorithm/datastruct"
 )
 
-// Dijkstra は，ある始点からグラフ上の各点への最短経路を O(E*log(V)) で求める．
-// dist は呼び出し元で各要素を INF (1<<60) に初期化する必要があるので注意．
+/*
+  Verified:
+    https://onlinejudge.u-aizu.ac.jp/solutions/problem/GRL_1_A/review/5793328/numacci/Go
+*/
+
+// Dijkstra は，始点sから全頂点への最短経路を O(E*log(V)) で求めるアルゴリズム．
 // 優先度付きキューを降順で使う場合にはPへの代入時にマイナスをかければよい．
-// Verified:
-//   https://onlinejudge.u-aizu.ac.jp/solutions/problem/GRL_1_A/review/5785793/numacci/Go
-func Dijkstra(G [][]*Edge, dist []int, s int) {
+type Dijkstra struct {
+	Inf  int
+	G    [][]*Edge
+	Dist []int
+}
+
+func NewDijkstra(n int) *Dijkstra {
+	inf := 1 << 60
+
+	dist := make([]int, n)
+	for i := 0; i < n; i++ {
+		dist[i] = inf
+	}
+
+	return &Dijkstra{
+		Inf:  inf,
+		G:    make([][]*Edge, n),
+		Dist: dist,
+	}
+}
+
+func (d *Dijkstra) AddEdge(from, to, cost int) {
+	d.G[from] = append(d.G[from], &Edge{To: to, Cost: cost})
+}
+
+func (d *Dijkstra) Do(s int) []int {
 	h := &PriorityQueue{}
 	heap.Init(h)
 
-	dist[s] = 0
+	d.Dist[s] = 0
 	heap.Push(h, &Item{P: 0, V: s})
 
 	for h.Len() > 0 {
 		item := heap.Pop(h).(*Item)
-		d, v := item.P, item.V.(int)
-		if dist[v] < d {
+		v := item.V.(int)
+		if d.Dist[v] < item.P {
 			continue
 		}
 
-		for _, nv := range G[v] {
-			if dist[nv.To] > dist[v]+nv.Cost {
-				dist[nv.To] = dist[v] + nv.Cost
-				heap.Push(h, &Item{P: dist[nv.To], V: nv.To})
+		for _, nv := range d.G[v] {
+			if d.Dist[nv.To] > d.Dist[v]+nv.Cost {
+				d.Dist[nv.To] = d.Dist[v] + nv.Cost
+				heap.Push(h, &Item{P: d.Dist[nv.To], V: nv.To})
 			}
 		}
 	}
+	return d.Dist
 }
