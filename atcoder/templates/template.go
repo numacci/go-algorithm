@@ -13,7 +13,12 @@ func main() {
 	// Implement from here
 }
 
+/* ============================
+           TEMPLATE
+============================ */
+
 // IO Utils
+
 var (
 	sc = bufio.NewScanner(os.Stdin)
 	w  = bufio.NewWriter(os.Stdout)
@@ -72,3 +77,5 @@ func nfs(n int) []float64 {
 func out(x ...interface{}) {
 	fmt.Fprintln(w, x...)
 }
+
+// Standard Libraries
